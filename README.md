@@ -11,16 +11,17 @@ A beautiful, interactive birthday website created with love from Julius.
 - Countdown timer (shows "Happy Birthday" message on her special day)
 - Heartfelt wishes from Julius
 - Easy photo management system
+- Ready for Vercel deployment with real photo uploads
 
 ## Deployment Instructions
 
-### Deploying to Netlify
+### Deploying to Netlify (Current)
 
 1. **Sign up for Netlify** (if you haven't already)
    - Go to [netlify.com](https://netlify.com)
    - Sign up for a free account
 
-2. **Deploy the site**
+2. **Deploy the site*
    - Log in to your Netlify account
    - Drag and drop the entire project folder to the Netlify deployment area
    - OR connect your GitHub repository if you've uploaded the code there
@@ -34,6 +35,28 @@ A beautiful, interactive birthday website created with love from Julius.
    - In your Netlify dashboard, go to "Domain settings"
    - Add a custom domain if desired
    - Follow Netlify's instructions for DNS configuration
+
+### Deploying to Vercel (Recommended for Photo Uploads)
+
+The website is also ready for deployment to Vercel with real photo upload functionality:
+
+1. **Sign up for Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up for a free account
+
+2. **Connect your repository**
+   - Create a new project
+   - Connect to your GitHub repository
+
+3. **Configure build settings**
+   - Framework: Other
+   - Build Command: (Leave empty)
+   - Output Directory: (Leave empty)
+
+4. **Deploy**
+   - Vercel will automatically deploy your site
+
+For full photo upload functionality on Vercel, see [VERCEL_DEPLOYMENT.md](file:///C:/Users/JPK/Desktop/brecy%20waters/VERCEL_DEPLOYMENT.md) for setup instructions.
 
 ## File Structure
 ```
