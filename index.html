@@ -3,34 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brecy's Birthday Celebration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #ffc0cb 0%, #ffffff 50%, #ffe6ea 100%);
-            padding: 50px;
-            margin: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #ff69b4;
-        }
-    </style>
+    <title>Happy 20th Birthday Brecy Waters!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>🎉 Happy 20th Birthday Brecy Waters! 🎉</h1>
-        <p>This is a test page to verify deployment is working correctly.</p>
-        <p>If you can see this page, the deployment is successful!</p>
-        <p><a href="/test.html">Click here to test the test page</a></p>
-    </div>
+    <div class="background-overlay"></div>
+    
+    <!-- Audio player for birthday music -->
+    <audio id="birthdayMusic" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <header>
+        <div class="container">
+            <h1>Happy 20th Birthday Brecy Waters! 🎉</h1>
+            <p class="subtitle">With love from Julius ❤️</p>
+            <p class="subtitle">Celebrating your special day today!</p>
+            <button id="musicControl" class="music-control">🔊 Music On</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="birthday-message">
+                    <div class="profile-container">
+                        <img src="images/profile/profile.jpg" alt="Brecy Waters" class="profile-pic">
+                        <h2>Celebrating Your Special Day!</h2>
+                    </div>
+                    <p>Today you turn 20! What an amazing milestone to reach. May this new decade bring you joy, laughter, and countless blessings.</p>
+                    <div class="balloons">
+                        <span class="balloon">🎈</span>
+                        <span class="balloon">🎉</span>
+                        <span class="balloon">🎂</span>
+                        <span class="balloon">🎁</span>
+                        <span class="balloon">✨</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="memories">
+            <div class="container">
+                <h2>Wonderful Memories</h2>
+                <p>These moments with you are treasures I hold dear</p>
+                
+                <div class="gallery">
+                    <div class="photo-grid">
+                        <!-- Images will be loaded dynamically by photo-manager.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal for full-screen image viewing -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+
+        <section class="wishes">
+            <div class="container">
+                <h2>Wishes From Julius</h2>
+                <div class="wish-cards">
+                    <div class="wish-card">
+                        <p>"Happy 20th Birthday Brecy! May your day be filled with laughter, love, and all your favorite things."</p>
+                    </div>
+                    <div class="wish-card">
+                        <p>"Twenty looks beautiful on you! Wishing you a year filled with happiness and success."</p>
+                    </div>
+                    <div class="wish-card">
+                        <p>"As you step into this new chapter, may all your dreams come true. You deserve the world!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="countdown">
+            <div class="container">
+                <h2>Counting Down to Your Big Day!</h2>
+                <div class="timer">
+                    <div class="time-unit">
+                        <span class="number">01</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number">00</span>
+                        <span class="label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number">00</span>
+                        <span class="label">Seconds</span>
+                    </div>
+                </div>
+                <p class="excitement">So excited to celebrate with you! 🎂✨</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ by Julius | Happy 20th Birthday Brecy!</p>
+            <p class="signature">With all my love, Julius</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="photo-manager.js"></script>
 </body>
 </html>
