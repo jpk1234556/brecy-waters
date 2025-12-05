@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 20th Birthday Brecy Waters!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <!-- Audio player for birthday music -->
+    <audio id="birthdayMusic" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <header>
+        <div class="container">
+            <h1>Happy 20th Birthday Brecy Waters! 🎉</h1>
+            <p class="subtitle">With love from Julius ❤️</p>
+            <p class="subtitle">Celebrating your special day today!</p>
+            <button id="musicControl" class="music-control">🔊 Music On</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="birthday-message">
+                    <div class="profile-container">
+                        <img src="images/main.jpg" alt="Brecy Waters" class="profile-pic">
+                        <h2>Celebrating Your Special Day!</h2>
+                    </div>
+                    <p>Today you turn 20! What an amazing milestone to reach. May this new decade bring you joy, laughter, and countless blessings.</p>
+                    <div class="balloons">
+                        <span class="balloon">🎈</span>
+                        <span class="balloon">🎉</span>
+                        <span class="balloon">🎂</span>
+                        <span class="balloon">🎁</span>
+                        <span class="balloon">✨</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="memories">
+            <div class="container">
+                <h2>Wonderful Memories</h2>
+                <p>These moments with you are treasures I hold dear</p>
+                
+                <div class="gallery">
+                    <div class="photo-grid">
+                        <!-- Including all images in the gallery -->
+                        <img src="images/main.jpg" alt="Brecy's Profile" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.23_ca80260c.jpg" alt="Special moment" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.24_5ff38887.jpg" alt="Special time" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.24_aeca36d2.jpg" alt="Happy memory" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.24_c9f66cf3.jpg" alt="Joyful moment" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.24_cc5ceaff.jpg" alt="Cherished time" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.24_ffc3c04a.jpg" alt="Precious memory" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.25_1f9cf403.jpg" alt="Beautiful moment" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.25_42dd9404.jpg" alt="Special time" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.25_c63f5f71.jpg" alt="Happy memory" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.26_1bd93114.jpg" alt="Joyful moment" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.26_752f1ff9.jpg" alt="Cherished time" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.26_17e742f8.jpg" alt="Precious memory" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.26_45d77e7a.jpg" alt="Beautiful moment" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-05 at 23.57.26_cfc022fb.jpg" alt="Special time" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-06 at 00.00.07_17e742f8.jpg" alt="Happy memory" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-06 at 00.00.07_45d77e7a.jpg" alt="Joyful moment" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-06 at 00.00.08_1d9719d9.jpg" alt="Cherished time" class="gallery-img">
+                        <img src="images/WhatsApp Image 2025-12-06 at 00.00.08_cfc022fb.jpg" alt="Precious memory" class="gallery-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal for full-screen image viewing -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+
+        <section class="wishes">
+            <div class="container">
+                <h2>Wishes From Julius</h2>
+                <div class="wish-cards">
+                    <div class="wish-card">
+                        <p>"Happy 20th Birthday Brecy! May your day be filled with laughter, love, and all your favorite things."</p>
+                    </div>
+                    <div class="wish-card">
+                        <p>"Twenty looks beautiful on you! Wishing you a year filled with happiness and success."</p>
+                    </div>
+                    <div class="wish-card">
+                        <p>"As you step into this new chapter, may all your dreams come true. You deserve the world!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="countdown">
+            <div class="container">
+                <h2>Counting Down to Your Big Day!</h2>
+                <div class="timer">
+                    <div class="time-unit">
+                        <span class="number">01</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number">00</span>
+                        <span class="label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number">00</span>
+                        <span class="label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="number">00</span>
+                        <span class="label">Seconds</span>
+                    </div>
+                </div>
+                <p class="excitement">So excited to celebrate with you! 🎂✨</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ by Julius | Happy 20th Birthday Brecy!</p>
+            <p class="signature">With all my love, Julius</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

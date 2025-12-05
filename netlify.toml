@@ -1,0 +1,16 @@
+[build]
+  publish = "/"
+  command = "echo 'No build command needed for static site'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/404.html"
+  to = "/404.html"
+  status = 200
+
+[dev]
+  framework = "#static"
