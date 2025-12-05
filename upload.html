@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Photos - Brecy's Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .upload-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .upload-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
+        }
+        
+        .upload-area {
+            border: 3px dashed #ff69b4;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .upload-area:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-5px);
+        }
+        
+        .upload-btn {
+            background: linear-gradient(to right, #ff69b4, #ffb6c1);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .upload-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+        
+        #preview {
+            max-width: 100%;
+            max-height: 300px;
+            margin: 20px auto;
+            display: none;
+            border-radius: 10px;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff69b4;
+        }
+        
+        .instructions h3 {
+            color: #ff69b4;
+            margin-top: 0;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header>
+        <div class="container">
+            <h1>📸 Photo Upload</h1>
+            <p class="subtitle">Add new memories to Brecy's birthday celebration</p>
+            <a href="/" class="upload-btn" style="text-decoration: none; display: inline-block;">← Back to Birthday Site</a>
+        </div>
+    </header>
+
+    <div class="upload-container">
+        <div class="upload-section">
+            <h2>Update Profile Photo</h2>
+            <div class="upload-area" id="profileDropArea">
+                <p>Drag & drop your new profile photo here</p>
+                <p>or</p>
+                <input type="file" id="profileFileInput" accept="image/*" style="display: none;">
+                <button class="upload-btn" onclick="document.getElementById('profileFileInput').click()">Choose Profile Photo</button>
+                <img id="profilePreview" src="" alt="Profile Preview" style="display: none; max-width: 200px; border-radius: 50%; margin: 20px auto;">
+            </div>
+            <button class="upload-btn" onclick="uploadProfilePhoto()">Update Profile Photo</button>
+        </div>
+
+        <div class="upload-section">
+            <h2>Add Gallery Photos</h2>
+            <div class="upload-area" id="galleryDropArea">
+                <p>Drag & drop your gallery photos here</p>
+                <p>or</p>
+                <input type="file" id="galleryFileInput" accept="image/*" multiple style="display: none;">
+                <button class="upload-btn" onclick="document.getElementById('galleryFileInput').click()">Choose Gallery Photos</button>
+                <div id="galleryPreviews"></div>
+            </div>
+            <button class="upload-btn" onclick="uploadGalleryPhotos()">Add to Gallery</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📷 Photo Tips</h3>
+            <ul>
+                <li>Use JPG or PNG format for best results</li>
+                <li>Keep file sizes under 2MB for faster loading</li>
+                <li>Square or landscape photos work best in the gallery</li>
+                <li>Profile photos look best when square (1:1 ratio)</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ by Julius | Happy 20th Birthday Brecy!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Profile photo handling
+        const profileDropArea = document.getElementById('profileDropArea');
+        const profileFileInput = document.getElementById('profileFileInput');
+        const profilePreview = document.getElementById('profilePreview');
+        
+        // Gallery photos handling
+        const galleryDropArea = document.getElementById('galleryDropArea');
+        const galleryFileInput = document.getElementById('galleryFileInput');
+        const galleryPreviews = document.getElementById('galleryPreviews');
+        
+        // Prevent default drag behaviors
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            profileDropArea.addEventListener(eventName, preventDefaults, false);
+            galleryDropArea.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        // Highlight drop areas when item is dragged over them
+        ['dragenter', 'dragover'].forEach(eventName => {
+            profileDropArea.addEventListener(eventName, () => profileDropArea.style.borderColor = '#ff1493', false);
+            galleryDropArea.addEventListener(eventName, () => galleryDropArea.style.borderColor = '#ff1493', false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            profileDropArea.addEventListener(eventName, () => profileDropArea.style.borderColor = '#ff69b4', false);
+            galleryDropArea.addEventListener(eventName, () => galleryDropArea.style.borderColor = '#ff69b4', false);
+        });
+        
+        // Handle dropped files
+        profileDropArea.addEventListener('drop', handleProfileDrop, false);
+        galleryDropArea.addEventListener('drop', handleGalleryDrop, false);
+        
+        function handleProfileDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleProfileFiles(files);
+        }
+        
+        function handleGalleryDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleGalleryFiles(files);
+        }
+        
+        profileFileInput.addEventListener('change', function() {
+            handleProfileFiles(this.files);
+        });
+        
+        galleryFileInput.addEventListener('change', function() {
+            handleGalleryFiles(this.files);
+        });
+        
+        function handleProfileFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type.match('image.*')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profilePreview.src = e.target.result;
+                        profilePreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            }
+        }
+        
+        function handleGalleryFiles(files) {
+            galleryPreviews.innerHTML = '';
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                if (file.type.match('image.*')) {
+                    const reader = new FileReader();
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.style.maxWidth = '150px';
+                            img.style.margin = '10px';
+                            img.style.borderRadius = '10px';
+                            galleryPreviews.appendChild(img);
+                        };
+                    })(file);
+                    reader.readAsDataURL(file);
+                }
+            }
+        }
+        
+        function uploadProfilePhoto() {
+            alert('In a real implementation, this would upload the profile photo to the server and update images/profile/profile.jpg');
+            // In a real implementation, you would:
+            // 1. Send the file to a server endpoint
+            // 2. Save it as images/profile/profile.jpg
+            // 3. Return success message
+        }
+        
+        function uploadGalleryPhotos() {
+            alert('In a real implementation, this would upload the gallery photos to the server and add them to images/gallery/');
+            // In a real implementation, you would:
+            // 1. Send the files to a server endpoint
+            // 2. Save them in images/gallery/ with sequential names
+            // 3. Return success message
+        }
+    </script>
+</body>
+</html>
