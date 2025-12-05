@@ -1,0 +1,26 @@
+{
+  "name": "brecy-waters-birthday",
+  "version": "1.0.0",
+  "description": "Brecy Waters' 20th Birthday Celebration Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build required for static site'",
+    "start": "serve"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1000.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1"
+  },
+  "devDependencies": {
+    "vercel": "^28.0.0"
+  },
+  "keywords": [
+    "birthday",
+    "celebration",
+    "brecy-waters"
+  ],
+  "author": "Julius Love",
+  "license": "MIT"
+}
