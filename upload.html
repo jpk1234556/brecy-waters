@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Photos - Brecy's Birthday</title>
+    <title>Manage Photos - Brecy's Birthday</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -84,6 +84,17 @@
         .instructions li {
             margin-bottom: 10px;
         }
+        
+        .important-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #856404;
+        }
     </style>
 </head>
 <body>
@@ -91,7 +102,7 @@
     
     <header>
         <div class="container">
-            <h1>📸 Photo Upload</h1>
+            <h1>📸 Photo Management</h1>
             <p class="subtitle">Add new memories to Brecy's birthday celebration</p>
             <a href="/" class="upload-btn" style="text-decoration: none; display: inline-block;">← Back to Birthday Site</a>
         </div>
@@ -101,28 +112,46 @@
         <div class="upload-section">
             <h2>Update Profile Photo</h2>
             <div class="upload-area" id="profileDropArea">
-                <p>Drag & drop your new profile photo here</p>
-                <p>or</p>
+                <p>Select your new profile photo to preview</p>
+                <p>(Note: This preview is for demonstration only)</p>
                 <input type="file" id="profileFileInput" accept="image/*" style="display: none;">
                 <button class="upload-btn" onclick="document.getElementById('profileFileInput').click()">Choose Profile Photo</button>
                 <img id="profilePreview" src="" alt="Profile Preview" style="display: none; max-width: 200px; border-radius: 50%; margin: 20px auto;">
             </div>
-            <button class="upload-btn" onclick="uploadProfilePhoto()">Update Profile Photo</button>
+            <div class="important-note">
+                To actually update your profile photo:<br>
+                1. Save your photo as 'profile.jpg'<br>
+                2. Replace the file at 'images/profile/profile.jpg'<br>
+                3. Commit and push to GitHub
+            </div>
         </div>
 
         <div class="upload-section">
             <h2>Add Gallery Photos</h2>
             <div class="upload-area" id="galleryDropArea">
-                <p>Drag & drop your gallery photos here</p>
-                <p>or</p>
+                <p>Select your gallery photos to preview</p>
+                <p>(Note: This preview is for demonstration only)</p>
                 <input type="file" id="galleryFileInput" accept="image/*" multiple style="display: none;">
                 <button class="upload-btn" onclick="document.getElementById('galleryFileInput').click()">Choose Gallery Photos</button>
                 <div id="galleryPreviews"></div>
             </div>
-            <button class="upload-btn" onclick="uploadGalleryPhotos()">Add to Gallery</button>
+            <div class="important-note">
+                To actually add gallery photos:<br>
+                1. Save your photos with names like 'image16.jpg', 'image17.jpg'<br>
+                2. Place them in the 'images/gallery/' folder<br>
+                3. Commit and push to GitHub
+            </div>
         </div>
 
         <div class="instructions">
+            <h3>📷 How to Add Photos (Real Method)</h3>
+            <p><strong>This website is hosted on Netlify as a static site, which means:</strong></p>
+            <ul>
+                <li>No server-side processing for file uploads</li>
+                <li>Photos must be added through GitHub</li>
+                <li>Changes automatically deploy when you push to GitHub</li>
+            </ul>
+            
             <h3>📷 Photo Tips</h3>
             <ul>
                 <li>Use JPG or PNG format for best results</li>
@@ -232,19 +261,11 @@
         }
         
         function uploadProfilePhoto() {
-            alert('In a real implementation, this would upload the profile photo to the server and update images/profile/profile.jpg');
-            // In a real implementation, you would:
-            // 1. Send the file to a server endpoint
-            // 2. Save it as images/profile/profile.jpg
-            // 3. Return success message
+            alert('This is a demonstration only.\n\nTo actually update your profile photo:\n1. Save your photo as \'profile.jpg\'\n2. Replace the file at \'images/profile/profile.jpg\'\n3. Commit and push to GitHub\n\nThe website will automatically update!');
         }
         
         function uploadGalleryPhotos() {
-            alert('In a real implementation, this would upload the gallery photos to the server and add them to images/gallery/');
-            // In a real implementation, you would:
-            // 1. Send the files to a server endpoint
-            // 2. Save them in images/gallery/ with sequential names
-            // 3. Return success message
+            alert('This is a demonstration only.\n\nTo actually add gallery photos:\n1. Save your photos with names like \'image16.jpg\', \'image17.jpg\'\n2. Place them in the \'images/gallery/\' folder\n3. Commit and push to GitHub\n\nThe website will automatically update with your new photos!');
         }
     </script>
 </body>
