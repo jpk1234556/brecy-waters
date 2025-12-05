@@ -65,6 +65,7 @@ To personalize this website for another person/event:
 Brecy can easily add more photos using either:
 1. **Manual method**: Follow instructions in PHOTO_INSTRUCTIONS.md
 2. **Upload interface**: Visit /upload.html (when deployed)
+3. **Simple method**: Follow the easy steps in EASY_PHOTO_STEPS.md
 
 No coding knowledge is required to add photos!
 
