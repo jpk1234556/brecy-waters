@@ -86,7 +86,9 @@ function createConfetti() {
     }
 }
 
-// Add special effects to images when hovered
+// Note: Event listeners for gallery images are now handled by photo-manager.js
+// This section has been commented out to prevent conflicts
+/*
 document.querySelectorAll('.photo-grid img').forEach(img => {
     img.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.05) translateY(-10px)';
@@ -110,8 +112,10 @@ document.querySelectorAll('.photo-grid img').forEach(img => {
         captionText.innerHTML = this.alt;
     });
 });
+*/
 
 // Close modal when clicking on close button or outside the image
+// Note: These event listeners remain active as they're not duplicated in photo-manager.js
 const modal = document.getElementById('imageModal');
 const span = document.getElementsByClassName('close')[0];
 

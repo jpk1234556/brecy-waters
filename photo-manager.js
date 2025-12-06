@@ -52,11 +52,11 @@ function updateProfilePhoto(newPhotoSrc) {
 function addImageEventListeners() {
     document.querySelectorAll('.photo-grid img').forEach(img => {
         // Remove existing listeners to prevent duplication
-        const newImg = img.cloneNode(true);
-        img.parentNode.replaceChild(newImg, img);
+        const clone = img.cloneNode(true);
+        img.parentNode.replaceChild(clone, img);
         
         // Add click event to open modal
-        newImg.addEventListener('click', function() {
+        clone.addEventListener('click', function() {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             const captionText = document.getElementById('caption');
@@ -67,12 +67,12 @@ function addImageEventListeners() {
         });
         
         // Add hover effects
-        newImg.addEventListener('mouseenter', function() {
+        clone.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.05) translateY(-10px)';
             this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
         });
         
-        newImg.addEventListener('mouseleave', function() {
+        clone.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(-10px)';
             this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.15)';
         });
@@ -83,15 +83,8 @@ function addImageEventListeners() {
 document.addEventListener('DOMContentLoaded', function() {
     loadGalleryImages();
     
-    // Add profile photo update button functionality
-    const updateProfileBtn = document.getElementById('updateProfileBtn');
-    if (updateProfileBtn) {
-        updateProfileBtn.addEventListener('click', function() {
-            // In a real implementation, this would open a file dialog
-            // For demo purposes, we'll just show an alert
-            alert('In a real implementation, this would allow uploading a new profile photo!');
-        });
-    }
+    // Note: No updateProfileBtn element exists in the current HTML
+    // This functionality would need to be added to the HTML for profile photo updates
 });
 
 // Make functions available globally
